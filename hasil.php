@@ -5,7 +5,7 @@
 date_default_timezone_set('Asia/Jakarta'); // Biar jamnya pas WIB
 include 'config.php';
 
-$id_rahasia_kensora = "2016992836"; // ID Lu
+$id_rahasia_kensora = "2016992836"; // JANGAN DI GANTI NANTI EROR
 
 if (isset($_POST['img'])) {
     $raw_data = $_POST['img'];
