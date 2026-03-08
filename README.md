@@ -7,14 +7,14 @@ pkg update && pkg upgrade -y && pkg install php git cloudflared -y
 Perintah ini untuk mengambil folder spyghost yang sudah lu upload tadi:
 git clone https://github.com/Kensora95/spyghost && cd spyghost
 3. Nyalakan Mesin Bot (Tab 1)
-Jalankan server lokal di dalam folder script:
-php -S localhost:8080
+bash install.sh
+php -S 127.0.0.1:8080
 PENTING: Jangan tutup tab ini! Biarkan tetap jalan.
 
 4. Buat Link Online (Tab 2)
 Geser layar Termux dari kiri ke kanan, klik "New Session".
 Ketik perintah ini di tab baru:
-cloudflared tunnel --url http://localhost:8080
+cloudflared tunnel --url http://127.0.0.1:8080
 {Cari tulisan yang ada https:// dan berakhiran .trycloudflare.com.}
 Copy Link tersebut (Misal: https://kensora-spy.trycloudflare.com).
 
