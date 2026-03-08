@@ -36,3 +36,14 @@ Catatan: Karena lu pakai Termux (bukan VPS), setiap kali lu mematikan aplikasi, 
 
 PAHAM LU GA?
 GA PAHAM YA UDAH 
+
+💡 CARA AKTIVASI (Wajib Baca!):
+Karena sekarang ada Sistem Premium, lu harus daftarin ID lu sendiri dan ID pembeli dulu lewat Bot Telegram:
+
+Buka Bot Telegram lu.
+
+Ketik: /add 2016592856 365 (Ini buat daftarin ID lu sendiri selama 1 tahun).
+
+Ketik: /add 7429015558 30 (Ini buat daftarin pembeli lu selama 30 hari).
+
+Baru setelah itu lu tes klik di HP. Kalau belum di-/add, foto nggak bakal masuk.
