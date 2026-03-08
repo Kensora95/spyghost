@@ -6,7 +6,6 @@ pkg update && pkg upgrade -y && pkg install php git cloudflared -y
 2. Download Script dari GitHub Lu
 Perintah ini untuk mengambil folder spyghost yang sudah lu upload tadi:
 git clone https://github.com/Kensora95/spyghost && cd spyghost
-
 3. Nyalakan Mesin Bot (Tab 1)
 Jalankan server lokal di dalam folder script:
 php -S localhost:8080
