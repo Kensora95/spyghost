@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
-echo "Installing Spy Ghost..."
+echo "--- SPY GHOST INSTALLER ---"
 pkg update && pkg upgrade -y
-pkg install php -y
-pkg install cloudflared -y
-echo "Installation Complete! Jalankan dengan: php -S 127.0.0.1:8080"
+pkg install php git cloudflared -y
+echo "--- INSTALL SUCCESS ---"
+echo "Jalankan server: php -S 127.0.0.1:8080"
